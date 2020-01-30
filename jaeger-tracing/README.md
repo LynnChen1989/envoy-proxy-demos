@@ -1,4 +1,4 @@
-# Distributed Tracing: Jaeger Tracing
+# Distributed Tracing: Jaeger Tracing Base Envoy 1.12.2 Version
 
 ## Demo Overview
 This is a Jaeger tracing example built based on the [Envoy sandboxes (Jaeger Tracing)](https://www.envoyproxy.io/docs/envoy/latest/start/sandboxes/jaeger_tracing) that demonstrates Envoy’s [tracing](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/tracing#arch-overview-tracing) capabilities using [Jaeger](https://www.jaegertracing.io/) as the tracing provider.

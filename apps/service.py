@@ -22,17 +22,20 @@ TRACE_HEADERS_TO_PROPAGATE = [
     "uber-trace-id"
 ]
 
+
 def render_page():
     return ('<body bgcolor="{}"><span style="color:white;font-size:4em;">\n'
             'Hello from {} (hostname: {} resolvedhostname:{})\n</span></body>\n'.format(
-                    os.environ['SERVICE_NAME'],
-                    os.environ['SERVICE_NAME'],
-                    socket.gethostname(),
-                    socket.gethostbyname(socket.gethostname())))
+        os.environ['SERVICE_NAME'],
+        os.environ['SERVICE_NAME'],
+        socket.gethostname(),
+        socket.gethostbyname(socket.gethostname())))
+
 
 @app.route('/service/<service_color>')
 def service(service_color):
     return render_page()
+
 
 @app.route('/trace/<service_color>')
 def trace(service_color):
@@ -51,6 +54,7 @@ def trace(service_color):
                 headers[header] = request.headers[header]
         ret = requests.get("http://localhost:9000/trace/red", headers=headers)
     return render_page()
+
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=8080, debug=True)
